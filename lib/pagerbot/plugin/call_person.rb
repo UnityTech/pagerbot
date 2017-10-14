@@ -97,6 +97,11 @@ module PagerBot::Plugins
       )
 
       log.info "Put #{person_name} on temporary schedule for 5 minutes. #{override}"
+      dbg = {
+        integration: @service[:integrations],
+        query: query,
+      }
+      log.info "barf: #{dbg.inspect}"
 
       incident = post_incident(
         # :TODO: Frail.
